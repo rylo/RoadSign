@@ -1,18 +1,15 @@
 $(document).ready(function($) {
-    
-  $(".scroll").click(function(event){
-    event.preventDefault();
-    $('html,body').animate({scrollTop:$(this.hash).offset().top}, 400);
-  });
-    
-  $(document).scroll( function() {
-    updateScrollerListeners();
-  });
-
+  setScrollListener();
 });
 
 function getWindowPosition() {
   return $(window).scrollTop() + $(window).height();
+}
+
+function setScrollListener() {
+  $(document).scroll( function() {
+    updateScrollerListeners();
+  });
 }
 
 function scrollListeners() {
@@ -45,27 +42,3 @@ function updateScrollerListeners() {
     }
   }
 }
-
-// function scrollListenersDos() {
-//   return {
-//     "listeners": [
-//       { 'listener':'#discovery', 
-//         'options': {'animatedElement':'.animate', 'animation':'animated fadeInUp'}},
-//     
-//       {'listener':'#wireframing',
-//         'options': {'animatedElement':'.animate', 'animation':'animated fadeInUp'}},
-//       
-//       {'listener':'#prototyping',
-//         'options': {'animatedElement':'.animate', 'animation':'animated fadeInUp'}},
-//       
-//       {'listener':'#user-testing',
-//         'options': {'animatedElement':'.animate', 'animation':'animated fadeInUp'}},
-//       
-//       {'listener':'#visual-design',
-//         'options': {'animatedElement':'.animate', 'animation':'animated fadeInUp'}},
-//     
-//       {'listener':'#implementation',
-//         'options': {'animatedElement':'.animate', 'animation':'animated fadeInUp'}}
-//     ]
-//   }
-// }
